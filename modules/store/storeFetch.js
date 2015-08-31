@@ -148,7 +148,7 @@ function fetch(id, local, remote) {
   function fetchFinished(result) {
     finished();
 
-    if (app && app.fetchFinished && result) {
+    if (app && app.fetchFinished && !_.isUndefined(result)) {
       app.fetchFinished(store.id, options.id, 'DONE', {
         result: result
       });
